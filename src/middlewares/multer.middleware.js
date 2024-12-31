@@ -11,4 +11,8 @@ const storage = multer.diskStorage({
 
 export const upload = multer({
   storage,
+  fileFilter: (req, file, cb) => {
+    // console.log("file being uploaded: ", file);
+    cb(null, true); // Allow all files for debugging
+  },
 });
